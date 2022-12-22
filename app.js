@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 mongoose.connect('mongodb+srv://Manikandan:Datatest1234@cluster0.d3vfq3t.mongodb.net/todolistDB');
 const app = express();
+const port = process.env.PORT || 3000;
 mongoose.set('strictQuery', true);
 const _ = require("lodash");
 
@@ -133,6 +134,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(port, function() {
+  console.log("Server started Successfully");
 });
